@@ -1,0 +1,35 @@
+Row 2112 (EmployeeID: 234747):
+   - Invalid PhoneNumber, PhoneNumber must be in format (XXX)XXX-XXXX.
+
+Row 5943 (EmployeeID: 219301):
+   - Invalid PhoneNumber, PhoneNumber must be in format (XXX)XXX-XXXX.
+
+Row 6942 (EmployeeID: 206119):
+   - Name cannot be null, empty, or duplicated.
+
+Row 7919 (EmployeeID: 232932):
+   - Name cannot be null, empty, or duplicated.
+
+Row 9044 (EmployeeID: 221765):
+   - JobTitle did not match or is empty.
+
+Row 9833 (EmployeeID: 254214):
+   - SocialSecurity must be unique and cannot be null or empty.
+
+Row 13090 (EmployeeID: 469045):
+   - Name cannot be null, empty, or duplicated.
+
+Row 14321 (EmployeeID: 285144):
+   - Name cannot be null, empty, or duplicated.
+   - SocialSecurity must be unique and cannot be null or empty.
+
+Error Summary:
+                                                    Error Message  Count
+                       Name cannot be null, empty, or duplicated.      4
+Invalid PhoneNumber, PhoneNumber must be in format (XXX)XXX-XXXX.      2
+       SocialSecurity must be unique and cannot be null or empty.      2
+                              JobTitle did not match or is empty.      1
+
+Total Rows Processed: 14321
+Total Rows with Errors: 8
+Total Error Messages: 9  <-- graded count (must be < 50)
