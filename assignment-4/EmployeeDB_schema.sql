@@ -2,7 +2,6 @@
 -- Please log an issue at https://github.com/pgadmin-org/pgadmin4/issues/new/choose if you find any bugs, including reproduction steps.
 BEGIN;
 
-
 CREATE TABLE IF NOT EXISTS public.personaldetails
 (
     ssn character varying(20),
@@ -51,6 +50,8 @@ CREATE TABLE IF NOT EXISTS public.divisionlocations
     divstreet character varying(20),
     divzip character varying(10),
     divisionphome character varying(20),
+    divcity character varying(20),
+    divstate character varying(5),
     PRIMARY KEY (locationid)
 );
 
@@ -72,7 +73,8 @@ CREATE TABLE IF NOT EXISTS public.employeedetails
     jobtitleid serial,
     divisionid serial,
     salary numeric NOT NULL,
-    PRIMARY KEY (emp_id)
+    PRIMARY KEY (emp_id), CONSTRAINT salary_positive CHECK (salary > 0)
+
 );
 
 ALTER TABLE IF EXISTS public.divisionlocations
@@ -129,8 +131,5 @@ ALTER TABLE IF EXISTS public.employeedetails
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
-
-ALTER TABLE IF EXISTS public.employeedetails
-    ADD CONSTRAINT check_positive_salary CHECK (salary > 0);
 
 END;
